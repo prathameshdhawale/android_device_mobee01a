@@ -16,14 +16,15 @@
 $(call inherit-product, device/LYF/mobee01a/full_mobee01a.mk)
 
 # Inherit some common AOSiP stuff.
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/common.mk)
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8939
 
-PRODUCT_NAME := aosip_mobee01a
+PRODUCT_NAME := aosp_mobee01a
 BOARD_VENDOR := LYF
 PRODUCT_DEVICE := mobee01a
+TARGET_BOOT_ANIMATION_RES := 720
 
 PRODUCT_GMS_CLIENTID_BASE := android-ckt
 
@@ -33,6 +34,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE=LS-5015
 
 BUILD_FINGERPRINT := LYF/LS-5015/LS-5015:6.0.1/MMB29M/434:user/release-keys
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    DEVICE_MAINTAINERS="Mohd Faraz (AndroiableDroid)"
