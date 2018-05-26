@@ -248,7 +248,7 @@
     <integer name="config_screenBrightnessDark">2</integer>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
-    <integer name="config_screenBrightnessDim">7</integer>
+    <!--<integer name="config_screenBrightnessDim">7</integer>-->
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
@@ -260,7 +260,7 @@
 
     <!-- Base "touch slop" value used by ViewConfiguration as a
          movement threshold where scrolling should begin. -->
-    <dimen name="config_viewConfigurationTouchSlop">4dp</dimen>
+    <!--<dimen name="config_viewConfigurationTouchSlop">4dp</dimen>-->
 
     <!-- Default value for led color when battery is low on charge -->
     <integer name="config_notificationsBatteryLowARGB">0x00FF0000</integer>
