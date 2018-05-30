@@ -98,6 +98,11 @@ PRODUCT_PACKAGES += \
     android.hardware.health@1.0-convert \
     android.hardware.health@1.0-service
 
+# Gestures and Glove mode package
+PRODUCT_PACKAGES += \
+    DeviceSettings
+
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
@@ -234,8 +239,6 @@ PRODUCT_PACKAGES += \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
     libwcnss_qmi \
     wcnss_service
 
@@ -307,8 +310,8 @@ PRODUCT_PACKAGES += \
 
 # Keylayout
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/goodix.kl:system/usr/keylayout/goodix.kl \
-    $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
+    $(LOCAL_PATH)/keylayout/goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/goodix.kl \
+    $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl
 
 # Libshim
 PRODUCT_PACKAGES += \
@@ -378,9 +381,8 @@ PRODUCT_PACKAGES += \
     libshim_parcel \
     libshim_boringssl
 
-# Doze
+# Parts
 PRODUCT_PACKAGES += \
-    LYFDoze \
     LYFParts
 
 #Misc
