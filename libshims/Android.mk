@@ -16,6 +16,32 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
+LOCAL_SRC_FILES := parcel/parcel.cpp
+LOCAL_SHARED_LIBRARIES := libbinder
+LOCAL_MODULE := libshim_parcel
+LOCAL_MODULE_TAGS := optional
+LOCAL_VENDOR_MODULE := true
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := boringssl/p_dec.c boringssl/p_open.c boringssl/cipher.c \
+    boringssl/e_des.c boringssl/cleanup.c boringssl/ctrl.c
+
+LOCAL_CFLAGS += -std=c99
+LOCAL_C_INCLUDES := boringssl
+LOCAL_SHARED_LIBRARIES := libcrypto liblog 
+LOCAL_MODULE := libshim_boringssl
+LOCAL_VENDOR_MODULE := true
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
 LOCAL_SRC_FILES := \
     android/sensor.cpp \
     gui/SensorManager.cpp
@@ -23,6 +49,7 @@ LOCAL_SRC_FILES := \
 LOCAL_C_INCLUDES := gui
 LOCAL_SHARED_LIBRARIES := libgui libutils liblog libsensor libbinder libandroid
 LOCAL_MODULE := libshim_camera
+LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 
 include $(BUILD_SHARED_LIBRARY)
@@ -38,41 +65,22 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := parcel/parcel.cpp
+LOCAL_SRC_FILES := \
+    flp/flp.c
 
-LOCAL_SHARED_LIBRARIES := libbinder
-LOCAL_MODULE := libshim_parcel
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-
-LOCAL_SRC_FILES := boringssl/p_dec.c boringssl/p_open.c boringssl/cipher.c \
-    boringssl/e_des.c boringssl/cleanup.c boringssl/ctrl.c
-
-LOCAL_CFLAGS += -std=c99
-LOCAL_C_INCLUDES := boringssl
-LOCAL_SHARED_LIBRARIES := libcrypto
-LOCAL_MODULE := libshim_boringssl
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-
-LOCAL_SRC_FILES := get_process_name.c
-LOCAL_MODULE := libshims_get_process_name
-LOCAL_MODULE_TAGS := optional
-
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-
-LOCAL_SRC_FILES := flp.c
 LOCAL_MODULE := libshims_flp
+LOCAL_VENDOR_MODULE := true
+LOCAL_MODULE_TAGS := optional
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+    get_process_name/get_process_name.c
+
+LOCAL_MODULE := libshims_get_process_name
+LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)

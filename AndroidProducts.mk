@@ -14,4 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cos.mk
+    $(LOCAL_DIR)/full_mobee01a.mk
+
+#----------------------------------------------------------------------
+# extra images
+#----------------------------------------------------------------------
+include build/core/generate_extra_images.mk
