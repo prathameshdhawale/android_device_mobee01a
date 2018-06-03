@@ -26,8 +26,11 @@ LOCAL_CFLAGS += -DHAS_MULTIMEDIA_HINTS
 LOCAL_CFLAGS += -DUSE_MEDIA_EXTENSIONS
 #endif
 
-#Debug logs are enabled
-#LOCAL_CFLAGS += -DDISABLE_DEBUG_LOG
+# Debug logs are disabled
+LOCAL_CFLAGS += -DDISABLE_DEBUG_LOG
+
+LOCAL_CFLAGS += -DDEFAULT_ZSL_MODE_ON
+LOCAL_CFLAGS += -DDEFAULT_DENOISE_MODE_ON
 
 #ifeq ($(TARGET_USES_AOSP),true)
 #LOCAL_CFLAGS += -DVANILLA_HAL
@@ -68,6 +71,8 @@ ifeq ($(TARGET_TS_MAKEUP),true)
 LOCAL_SHARED_LIBRARIES += libts_face_beautify_hal libts_detected_face_hal
 endif
 LOCAL_SHARED_LIBRARIES += libqdMetaData libqservice libbinder
+LOCAL_SHARED_LIBRARIES += libhidltransport libsensor android.hidl.token@1.0-utils android.hardware.graphics.bufferqueue@1.0
+LOCAL_STATIC_LIBRARIES := libarect
 
 LOCAL_STATIC_LIBRARIES := android.hardware.camera.common@1.0-helper
 
