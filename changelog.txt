@@ -1,11 +1,25 @@
+# Candy
+ Updated to latest
+
+ Many Fixed
+
+ Fonts Included
+
+ Etc
 
 # Personal
-Fixed Recording issue in the Camera Apps (Thanks to @MikeNG)
-Increased Sound Quality (Added Stock MTP's)
-Increased Headset Sound
-Added Display Gestures:
- * PickUp Sensor
- * Proximity
- * Pocket
- * Haptic Vibrate
-Panorama not tested
+ Fixed Recording issue in the Camera Apps (Thanks to @MikeNG)
+
+ Increased Sound Quality (Added Stock MTP's)
+
+ Increased Headset Sound
+
+ Added Display Gestures:
+  * PickUp Sensor
+  * Proximity
+  * Pocket
+  * Haptic Vibrate
+
+ Panorama not tested
+
+ Fixed Dim Light while using Videi Camera (Thanks to @leodiram)
