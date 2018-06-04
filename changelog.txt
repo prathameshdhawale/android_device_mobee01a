@@ -1,7 +1,3 @@
-# Carbon
-Latest Security Patch
-etc.
-
 # Personal
 Fixed Recording issue in the Camera Apps (Thanks to @MikeNG)
 Increased Sound Quality (Added Stock MTP's)
