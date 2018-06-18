@@ -278,9 +278,10 @@ TARGET_SCREEN_WIDTH := 720
 PRODUCT_PACKAGES += \
     camera.msm8916 \
     libmm-qcamera \
-    FootejCamera \
     libshim_camera \
-    libboringssl-compat
+    libboringssl-compat \
+    Snap \
+    Camera2
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
@@ -319,7 +320,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.lyf_8916
+    android.hardware.light@2.0-service.aw2013
 
 # Media
 PRODUCT_COPY_FILES += \
