@@ -25,7 +25,7 @@ import android.preference.PreferenceManager;
 
 public class TapToWakeSwitch implements OnPreferenceChangeListener {
 
-    private static final String FILE = "/sys/devices/virtual/touchscreen/touchscreen_dev/gesture_ctrl";
+    private static final String FILE = "/sys/devices/soc.0/78ba000.i2c/i2c-6/6-0048/wakeup_gesture";
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
