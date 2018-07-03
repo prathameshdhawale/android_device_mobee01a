@@ -80,9 +80,6 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service
 
-# Dalvik
-$(call inherit-product, device/LYF/mobee01a/display/phone-xxhdpi-2048-hwui-memory.mk)
-
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
@@ -131,6 +128,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl
+
 
 # FM
 PRODUCT_PACKAGES += \
@@ -224,8 +226,7 @@ PRODUCT_PACKAGES += \
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl \
-    android.hardware.renderscript@1.0-service
+    android.hardware.renderscript@1.0-impl
 
 # Seccomp
 PRODUCT_COPY_FILES += \
@@ -285,12 +286,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    camera.device@1.0-impl \
-    android.hardware.camera.provider@2.4-service \
+    android.hardware.camera.provider@2.4-service.mobee01a \
     camera.device@3.2-impl
-
-# Dalvik
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -359,15 +356,7 @@ PRODUCT_COPY_FILES += \
 
 # USB ID
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.usb.id.midi=90BA \
-    ro.usb.id.midi_adb=90BB \
-    ro.usb.id.mtp=F003 \
-    ro.usb.id.mtp_adb=9039 \
-    ro.usb.id.ptp=904D \
-    ro.usb.id.ptp_adb=904E \
-    ro.usb.id.ums=F000 \
-    ro.usb.id.ums_adb=9015 \
-    ro.usb.vid=05c6
+    ro.adb.secure=0
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
@@ -393,7 +382,25 @@ PRODUCT_PACKAGES += \
 
 # VNDK-SP:
 PRODUCT_PACKAGES += \
-    vndk-sp
+    mobee01a-vndk
+
+# Vendor Specific
+PRODUCT_PACKAGES += \
+    android.hardware.camera.device@1.0.vendor \
+    android.hardware.camera.common@1.0.vendor \
+    libsensor_vendor
+
+# Sensor
+PRODUCT_PACKAGES += \
+   android.hardware.sensors@1.0.vendor
+# Display
+PRODUCT_PACKAGES += \
+   libhardware_legacy.vendor \
+   libbinder.vendor \
+   libui.vendor \
+   android.hardware.configstore@1.0.vendor \
+   android.hardware.configstore-utils.vendor \
+   libstagefright_foundation.vendor
 
 # Call the proprietary setup
 $(call inherit-product-if-exists, vendor/LYF/mobee01a/mobee01a-vendor.mk)

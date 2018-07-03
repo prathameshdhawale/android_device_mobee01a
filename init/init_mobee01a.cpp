@@ -118,6 +118,9 @@ void vendor_load_properties()
     property_set("dalvik.vm.heaptargetutilization", "0.75");
     property_set("dalvik.vm.heapminfree", heapminfree);
     property_set("dalvik.vm.heapmaxfree", "8m");
+    property_set("dalvik.vm.dex2oat-flags", "--no-watch-dog");
+    property_set("dalvik.vm.dex2oat-swap", "false");
+    property_set("sys.use_fifo_ui", "1");
 
     init_alarm_boot_properties();
 }

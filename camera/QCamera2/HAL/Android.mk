@@ -45,6 +45,9 @@ LOCAL_CFLAGS += -DDEFAULT_DENOISE_MODE_ON
 LOCAL_C_INCLUDES := \
     $(LOCAL_PATH)/../stack/common \
     frameworks/native/include/media/openmax \
+    frameworks/native/libs/nativebase/include \
+    frameworks/native/libs/nativewindow/include \
+    frameworks/native/libs/arect/include \
     $(call project-path-for,qcom-display)/libgralloc \
     $(call project-path-for,qcom-display)/libqdutils \
     $(call project-path-for,qcom-display)/libqservice \
@@ -65,8 +68,9 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/tsMakeuplib/include
 endif
 LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
-LOCAL_SHARED_LIBRARIES := liblog libhardware libutils libcutils libdl
+LOCAL_SHARED_LIBRARIES := liblog libhardware libutils libcutils libdl libsync
 LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface libqdMetaData
+LOCAL_SHARED_LIBRARIES += libhidltransport libsensor_vendor android.hidl.token@1.0-utils android.hardware.graphics.bufferqueue@1.0
 ifeq ($(TARGET_TS_MAKEUP),true)
 LOCAL_SHARED_LIBRARIES += libts_face_beautify_hal libts_detected_face_hal
 endif

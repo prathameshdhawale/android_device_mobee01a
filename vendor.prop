@@ -25,7 +25,6 @@ persist.hwc.ptor.enable=true
 debug.enable.sglscale=1
 
 # Media
-persist.media.treble_omx=false
 drm.service.enabled=1
 vidc.enc.narrow.searchrange=1
 
@@ -38,6 +37,7 @@ ro.core_ctl_max_cpu=4
 # Radio
 persist.data.qmi.adb_logmask=0
 persist.radio.apm_sim_not_pwdn=1
+persist.vendor.radio.apm_sim_not_pwdn=1
 ro.telephony.call_ring.multiple=false
 
 #FRP
@@ -71,7 +71,6 @@ ril.ecclist=000,08,100,101,102,110,112,118,119,120,122,911,999
 ril.ecclist1=000,08,100,101,102,110,112,118,119,120,122,911,999
 ro.telephony.default_network=9,9
 ril.subscription.types=NV,RUIM
-ro.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
 persist.data.mode=concurrent
 persist.vendor.radio.rat_on=combine
@@ -101,3 +100,6 @@ ro.opengles.version=196610
 # Perf
 ro.min_freq_0=960000
 ro.min_freq_4=800000
+
+#Treble
+ro.treble.enable=true
