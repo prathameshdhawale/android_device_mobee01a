@@ -106,12 +106,6 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0 \
     android.hidl.manager@1.0-java
 
-#GPS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl \
-    android.hardware.gnss@1.0-impl-qti \
-    android.hardware.gnss@1.0-service-qti
-
 #Broadcast
 PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
@@ -317,7 +311,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.aw2013
+    android.hardware.light@2.0-service.aw2013-mobee01a
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -389,7 +383,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.device@1.0.vendor \
     android.hardware.camera.common@1.0.vendor \
     libsensor_vendor
-
 # Sensor
 PRODUCT_PACKAGES += \
    android.hardware.sensors@1.0.vendor
