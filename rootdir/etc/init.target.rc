@@ -26,7 +26,7 @@
 #
 
 on init
-    export LD_PRELOAD "libshim_atomic.so"
+    export LD_PRELOAD "libshim_boringssl.so"
 
 on boot
      # ltr553 light

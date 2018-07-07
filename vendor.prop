@@ -66,7 +66,7 @@ persist.camera.hal.debug.mask=0
 DEVICE_PROVISIONED=1
 persist.radio.multisim.config=dsds
 ro.config.always_show_roaming=true
-rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 ril.ecclist=000,08,100,101,102,110,112,118,119,120,122,911,999
 ril.ecclist1=000,08,100,101,102,110,112,118,119,120,122,911,999
 ro.telephony.default_network=9,9
@@ -98,6 +98,7 @@ persist.dbg.volte_avail_ovr=1
 persist.volte_enabled_by_hw=1
 
 # Display
+qemu.hw.mainkeys=0
 ro.opengles.version=196610
 
 # Perf

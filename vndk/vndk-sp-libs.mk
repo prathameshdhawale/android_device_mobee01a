@@ -37,7 +37,7 @@ EXTRA_VENDOR_LIBRARIES := \
     libhardware_legacy \
     libbinder \
     android.hardware.camera.common@1.0  \
-    android.hardware.sensors@1.0 \
+#    android.hardware.sensors@1.0 \
     android.hardware.camera.device@1.0 \
     libsensor_vendor \
     libstagefright_foundation

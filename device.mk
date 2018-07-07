@@ -340,9 +340,10 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
     libjni_proximityCalibrate \
-    ProximityCalibrate \
-    sensors.msm8916
+    ProximityCalibrate
+#    sensors.msm8916
 
 # Thermal
 PRODUCT_COPY_FILES += \
@@ -384,8 +385,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0.vendor \
     libsensor_vendor
 # Sensor
-PRODUCT_PACKAGES += \
-   android.hardware.sensors@1.0.vendor
+#PRODUCT_PACKAGES += \
+#   android.hardware.sensors@1.0.vendor
 # Display
 PRODUCT_PACKAGES += \
    libhardware_legacy.vendor \
@@ -394,6 +395,8 @@ PRODUCT_PACKAGES += \
    android.hardware.configstore@1.0.vendor \
    android.hardware.configstore-utils.vendor \
    libstagefright_foundation.vendor
+
+TARGET_GAPPS_ARCH := arm64
 
 # Call the proprietary setup
 $(call inherit-product-if-exists, vendor/LYF/mobee01a/mobee01a-vendor.mk)
