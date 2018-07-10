@@ -53,17 +53,9 @@ LOCAL_MODULE := libshim_camera
 LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 
-include $(BUILD_SHARED_LIBRARY)
+LOCAL_HEADER_LIBRARIES  := libandroid_sensor_headers
 
-include $(CLEAR_VARS)
-
-LOCAL_SRC_FILES := atomic.cpp
-
-LOCAL_MODULE := libshim_atomic
-LOCAL_VENDOR_MODULE := true
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-
-include $(BUILD_SHARED_LIBRARY)
+nclude $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
