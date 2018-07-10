@@ -13,7 +13,8 @@ LOCAL_SHARED_LIBRARIES := \
     libdl \
     liblog \
     libloc_core \
-    libgps.utils
+    libgps.utils \
+    libhardware
 
 LOCAL_SRC_FILES += \
     loc_eng.cpp \
@@ -69,7 +70,8 @@ LOCAL_SHARED_LIBRARIES := \
     libloc_eng \
     libloc_core \
     libgps.utils \
-    libdl
+    libdl \
+    libhardware
 
 LOCAL_SRC_FILES += \
     loc.cpp \
