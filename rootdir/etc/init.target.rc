@@ -25,11 +25,19 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-on init
+on boot
+    #ACDB
+    mount none /vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb /system/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb bind
+    mount none /vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb /system/etc/acdbdata/QRD/QRD_Global_cal.acdb bind
+    mount none /vendor/etc/acdbdata/QRD/QRD_General_cal.acdb /system/etc/acdbdata/QRD/QRD_General_cal.acdb bind
+    mount none /vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb /system/etc/acdbdata/QRD/QRD_Handset_cal.acdb bind
+    mount none /vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb /system/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb bind
+    mount none /vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb /system/etc/acdbdata/QRD/QRD_Headset_cal.acdb bind
+    mount none /vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb /system/etc/acdbdata/QRD/QRD_Speaker_cal.acdb bind
+
     export LD_PRELOAD "libshim_boringssl.so"
 
-on boot
-     # ltr553 light
+    # ltr553 light
     chown system system /sys/class/sensors/ltr553_light/calibrate
     chown system system /sys/class/sensors/ltr553_light/enable
     chown system system /sys/class/sensors/ltr553_light/enable_wakeup
