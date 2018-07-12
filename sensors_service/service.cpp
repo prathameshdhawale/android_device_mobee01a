@@ -14,41 +14,18 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.sensors@1.0-service.wt88047"
+#define LOG_TAG "android.hardware.sensors@1.0-service.kuntao"
 
 #include <android/hardware/sensors/1.0/ISensors.h>
-#include <hidl/HidlSupport.h>
-#include <binder/IPCThreadState.h>
-#include <hidl/HidlTransportSupport.h>
-#include <log/log.h>
+#include <hidl/LegacySupport.h>
 
 using android::hardware::sensors::V1_0::ISensors;
-using android::hardware::configureRpcThreadpool;
-using android::hardware::joinRpcThreadpool;
-using android::sp;
+using android::hardware::defaultPassthroughServiceImplementation;
 
 int main() {
-    configureRpcThreadpool(2, true);
-    sp<ISensors> service = ISensors::getService("default", true /* getStub */);
-
-    if (service == nullptr) {
-        ALOGE("Could not get passthrough implementation for %s/%s.",
-            ISensors::descriptor, "default");
-        return 1;
-    }
-
-    android::status_t status = service->registerAsService("default");
-
-    if (status == android::OK) {
-        ALOGI("Registration complete for %s/%s.",
-            ISensors::descriptor, "default");
-    } else {
-        ALOGE("Could not register service %s/%s (%d).",
-            ISensors::descriptor, "default", status);
-    }
-    if (status != android::OK) {
-        return 1;
-    }
-    android::IPCThreadState::self()->joinThreadPool();
-    return 0;
+    /* Sensors framework service needs at least two threads.
+     * One thread blocks on a "poll"
+     * The second thread is needed for all other HAL methods.
+     */
+    return defaultPassthroughServiceImplementation<ISensors>(2);
 }
