@@ -1,5 +1,5 @@
 cc_library_static {
-    name: "multihal-mobee01a",
+    name: "multihal-lyf",
     vendor: true,
     srcs: [
         "multihal.cpp",
@@ -9,8 +9,7 @@ cc_library_static {
         "liblog",
         "libcutils",
         "libutils",
-        "libdl",
-	"libhardware"
+        "libdl"
     ],
     export_include_dirs: ["."],
 }

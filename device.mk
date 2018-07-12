@@ -342,9 +342,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service.mobee01a \
-    libcalmodule_common \
-    sensors.native \
-    calmodule.cfg \
     sensors.msm8916
 
 # Thermal
