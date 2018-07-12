@@ -280,9 +280,7 @@ PRODUCT_PACKAGES += \
     libmm-qcamera \
     libshim_camera \
     libboringssl-compat \
-    Snap \
-    Camera2
-
+    
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.device@1.0-impl \
@@ -388,7 +386,6 @@ PRODUCT_PACKAGES += \
 
 #Misc
 PRODUCT_PACKAGES += \
-    MiXplorer \
     MusicPlayer
 
 # VNDK-SP:
