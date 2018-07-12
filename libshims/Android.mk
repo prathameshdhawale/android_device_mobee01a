@@ -55,7 +55,7 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 
 LOCAL_HEADER_LIBRARIES  := libandroid_sensor_headers
 
-nclude $(BUILD_SHARED_LIBRARY)
+include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 

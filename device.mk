@@ -387,8 +387,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0.vendor \
     libsensor_vendor
 # Sensor
-#PRODUCT_PACKAGES += \
-#   android.hardware.sensors@1.0.vendor
+PRODUCT_PACKAGES += \
+   android.hardware.sensors@1.0.vendor
 # Display
 PRODUCT_PACKAGES += \
    libhardware_legacy.vendor \
@@ -398,7 +398,5 @@ PRODUCT_PACKAGES += \
    android.hardware.configstore-utils.vendor \
    libstagefright_foundation.vendor
 
-TARGET_GAPPS_ARCH := arm64
-
 # Call the proprietary setup
-$(call inherit-product-if-exists, vendor/LYF/mobee01a/mobee01a-vendor.mk)
+$(call inherit-product, vendor/LYF/mobee01a/mobee01a-vendor.mk)

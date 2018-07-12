@@ -77,7 +77,9 @@ endif
 LOCAL_SHARED_LIBRARIES += libqdMetaData libqservice libbinder
 LOCAL_STATIC_LIBRARIES := libarect libbase
 
-LOCAL_HEADER_LIBRARIES := libnativebase_headers
+LOCAL_HEADER_LIBRARIES += media_plugin_headers
+
+LOCAL_HEADER_LIBRARIES += libnativebase_headers libhardware_headers
 
 LOCAL_STATIC_LIBRARIES := android.hardware.camera.common@1.0-helper
 

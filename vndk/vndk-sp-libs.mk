@@ -36,6 +36,7 @@ EXTRA_VENDOR_LIBRARIES := \
     android.hidl.manager@1.0 \
     libhardware_legacy \
     libbinder \
+    android.hardware.sensors@1.0 \
     android.hardware.camera.common@1.0  \
     android.hardware.camera.device@1.0 \
     libsensor_vendor \
